@@ -1,0 +1,23 @@
+{
+  "name": "worker-pool",
+  "version": "1.0.0",
+  "description": "```javascript const worker = (task) => {   return new Promise(async (resolve, reject) => {     try {       let fetchResult = await fetch(`https://jsonplaceholder.typicode.com/todos/${task}`)       if (fetchResult.ok) {         let pageContents = await fetchResult.text()         resolve(pageContents)       }     } catch (err) {       reject(err)     }   }) }",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ersoy78/worker-pool.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ersoy78/worker-pool/issues"
+  },
+  "homepage": "https://github.com/ersoy78/worker-pool#readme"
+}
