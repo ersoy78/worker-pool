@@ -20,7 +20,5 @@
     "url": "https://github.com/ersoy78/worker-pool/issues"
   },
   "homepage": "https://github.com/ersoy78/worker-pool#readme",
-  "dependencies": {
-    "set-interval-async": "^1.0.26"
-  }
+  "dependencies": {}
 }
