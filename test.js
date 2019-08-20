@@ -20,28 +20,25 @@ const worker = async (task) => {
 }
 
 const main = async () => {
-  const workerPool = new WorkerPool(1, worker, Array.from(workList))
+  const workerPool = new WorkerPool(32, worker, [])
   let i = 10
   const addWork = setInterval(() => {
-    console.log(workerPool.isWorking())
-    if (workerPool.isWorking()) {
-      workerPool.push(i)
-      console.log(`Added more work ${i}`)
-      i++
-    }
-  }, 1000)
+    workerPool.push(i)
+    console.log(`Added more work ${i}`)
+    i++
+  }, 10)
   setTimeout(() => {
     clearInterval(addWork)
+    workerPool.off()
     console.log(`Stop adding Work`)
-  }, 60000)
+  }, 10000)
   workerPool.on('ok', r => {
     console.log(r)
   })
   workerPool.on('fail', r => {
     console.log(r)
   })
-  let results = await workerPool.start()
-  console.log(results)
+  workerPool.idle()
   console.log(workList)
 }
 
