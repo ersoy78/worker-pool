@@ -20,6 +20,7 @@ const worker = async (task) => {
 }
 
 const main = async () => {
+  //const workerPool = new WorkerPool(nWorkers, workerFunction, taskList, retry=false, delay=10)
   const workerPool = new WorkerPool(32, worker, [])
   let i = 10
   const addWork = setInterval(() => {
