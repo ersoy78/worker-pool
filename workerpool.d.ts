@@ -1,3 +1,4 @@
+declare module "worker-pool";
 import { EventEmitter } from "events";
 
 export interface WorkerPoolOptions {
